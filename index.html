@@ -1,156 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FoodFun</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FoodFun</title>
+    <link rel="shortcut icon" href="./images/11787945_2460-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
   <style>
-    .prime-color { color: #ffb606; }
-    header { background: url('https://preview.colorlib.com/theme/foodfun/assets/images/reservation-bg.jpg') center/cover no-repeat; height: 75vh; position: relative; }
-    header .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
-    header .hero { position: relative; z-index: 1; top: 50%; transform: translateY(-50%); }
-    .food-card img { height: 240px; object-fit: cover; }
-    .background-image { background: url('./images/image.png') center/cover no-repeat; color: white; padding: 100px 0; text-align: center; }
+    @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Roboto, sans-serif;
+}
+#nav{
+ display: flex;
+ align-items: center;
+ gap: 10;
+ justify-content: space-between;
+ padding: 20px;
+ margin: 0 auto;
+ /* box-sizing: border-box; */
+ background-color: #ffffff;
+ width: 1100px;
+ text-align: center;
+ border-radius: 20px;
+
+}
+a{
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+        padding: 16px;
+        box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li{
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      padding-bottom: 20px;
+      padding-top: 20px;
+}
+header{
+    background-image: url(https://preview.colorlib.com/theme/foodfun/assets/images/reservation-bg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 920px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+    box-sizing: border-box;
+}
+li:hover{
+    border-bottom: 1px solid black;
+    background-color: rgba(17, 0, 255, 0.027);
+}
+h1, h6 {
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h6{
+   margin-top: 300px; 
+   font-size: 16px;
+   font-family: Roboto, sans-serif;
+   font-weight: 300;
+}
+h1{
+    font-size: 60px;
+}
+.prime-color{
+        color: #ffb606;
+}
+h1, h2{
+    font-family: "Playfair-Display", serif;
+}
+#img1{
+    width: 570px;
+    height: 570px;
+    /* margin-top: 105px;
+    margin-left: 105px; */
+}
+h2{
+    font-size: 40px;
+}
+#section-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+p{
+    text-align: justify;
+    font-size: 14px;
+    color: #777777;
+    line-height: 25px;
+}
+#p1{
+    margin-top: 20px;
+}
+button{
+    background-color: #ffb606;
+    padding: 12px 30px;
+    width: 156.38px;
+    font-size: 12px;
+    outline: none;
+    border: 1px solid #ffb606;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #131230;
+}
+button:hover{
+    background-color: transparent;
+    cursor: pointer;
+    transition: ease 0.38s;
+    -webkit-transition: ease 0.38s;
+    -moz-transition: ease 0.38s;
+    -ms-transition: ease 0.38s;
+    -o-transition: ease 0.38s;
+}
+#text{
+    padding-left: 100px;
+    padding-top: 100px;
+    text-align: justify;
+}
+.food-text h5{
+         font-size: 20px;
+         font-family: "Playfair Display", serif;
+         color: #131230;
+}
+.food-images img{
+   width: 100%;
+   height: 240px; 
+   object-fit: cover;
+}
+.food-text{
+    background-color: #f9f9ff;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.food-items p{
+    color: #777777;
+}
+.food-text h5 {
+    font-size: 20px;
+}
+.food-text span{
+    font-size: 20px;
+    font-weight: bold;
+}
+.food-text-p{
+    background-color: #f9f9ff;
+    width: 290px;
+    padding: 0 15px 15px 15px;
+    text-align: left;
+    line-height: 22px;
+    /* margin-bottom: 30px; */
+}
+.food-cards-container{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 80px;
+}
+.food-card{
+    width: 360px;
+    height: 360px;
+    background-color: #f9f9ff;
+    border-radius: 5px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+#card1{
+    margin-left: 120px;
+}
+@media screen and (max-width: 500px) {
+    .food-card{
+        display: flex;
+        flex-flow: column;
+        margin: 0 50px;
+    }
+}
+@media screen and (max-width: 500px) {
+#card1{
+        margin: 0 50px;
+    }
+}
+.background-image{
+    background-image: url(./images/image.png);
+    width: 100%;
+    height: 442.19px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 170px 0px;
+    box-sizing: border-box;
+    color: whitesmoke;
+}
+.background-image button:hover{
+    color: whitesmoke;
+}
+.background-image h2{
+    font-size: 42px;
+}
+.background-image h4{
+    font-size: 24px;
+}
+#section-4 h2{
+    font-size: 36px;
+}
+#section-4{
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 80px;
+}
+#section-4 p{
+    font-size: 14px;
+    text-align: center;
+}
+#heading::after{
+    content: "______";
+    font-size: 60px;
+    font-weight: 100;
+    padding-bottom: 70px;
+    padding-left: 10px;
+}
+#row1 h1{
+    color: #131230;
+    font-size: 60px;
+    text-align: left;
+    display: flex;
+    justify-content: left;
+    padding-left: 100px;
+    font-weight: bold;
+}
+#row1 h2{
+    padding-left: 100px;
+    font-size: 36px;
+}
+#row1 p{
+    padding-left: 100px;
+}
+h3{
+    font-family: Roboto, sans-serif;
+}
+#row1 h3{
+    padding-left: 100px;
+    font-size: 30px;
+}
+#row1 a{
+    padding: 100px;
+}
+#row1 a::after{
+    content: "→";
+    color: #ffb606;
+    font-size: 20px;
+    padding-left: 5px;
+}
+#heading1::after{
+    content: "______";
+    font-size: 60px;
+    font-weight: 100;
+    padding-bottom: 70px;
+    padding-left: 10px;
+}
+#row2 h1{
+    color: #131230;
+    font-size: 60px;
+    text-align: left;
+    display: flex;
+    justify-content: right;
+    padding-right: 100px;
+    font-weight: bold;
+}
+#row2 h2{
+    padding-left: 970px;
+    text-align: left;
+    font-size: 36px;
+}
+#row2 p{
+    padding-left: 970px;
+}
+h3{
+    font-family: Roboto, sans-serif;
+}
+#row2 h3{
+    padding-left: 970px;
+    font-size: 30px;
+}
+#row2 a{
+    padding-left: 970px;
+}
+#row2 a::after{
+    content: "→";
+    color: #ffb606;
+    font-size: 20px;
+    padding-left: 10px;
+}
+input{
+    width: 200px;
+    height: 50px;
+    padding: 30px;
+    margin-left: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+#section-6{
+    background: url(./images/image.png);
+    color: whitesmoke;
+    text-align: center;
+    padding: 90px;
+}
+#section-6 button:hover{
+    color: whitesmoke;
+}
+#section-6 p{
+    text-align: center;
+    color: whitesmoke;
+}
+table, tr, td{
+    padding: 20px;
+}
+#section-7{
+    background-color: #131230;
+}
+#section-7 h2{
+    font-size: 30px;
+}
+footer{
+    background-color: #0d0d27;
+    padding: 10px;
+}
+footer p{
+    text-align: center;
+}
   </style>
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="./images/logo.png.webp" alt="Food Fun" height="50">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-      <ul class="navbar-nav gap-3">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Elements</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="text-center text-white d-flex align-items-center">
-  <div class="overlay"></div>
-  <div class="container hero">
-    <h6 class="fw-light">THE MOST INTERESTING FOOD IN THE WORLD</h6>
-    <h1 class="display-2"><em>Discover the <span class="prime-color">flavours</span> of <span class="prime-color">foodfun</span></em></h1>
-  </div>
-</header>
-
-<section class="py-5">
-  <div class="container d-flex flex-column flex-lg-row align-items-center">
-    <div class="flex-shrink-0 me-4">
-      <img src="https://preview.colorlib.com/theme/foodfun/assets/images/welcome-bg.png.webp" class="img-fluid rounded" alt="welcome">
-    </div>
-    <div>
-      <h2 class="prime-color"><em>welcome</em></h2>
-      <h2>to food fun</h2>
-      <p class="text-secondary">Created god gathered ... Dominion. Great sixth ...</p>
-      <p class="text-secondary">Created god gathered ... your herb you had. And isn't god.</p>
-      <button class="btn btn-warning text-dark mt-3">BOOK A TABLE</button>
-    </div>
-  </div>
-</section>
-
-<section class="py-5 bg-light">
-  <div class="container text-center mb-4">
-    <h2 class="prime-color"><em>we serve</em></h2>
-    <h2>delicious food</h2>
-    <p class="text-secondary">They’re fill divide ... firmament on net.</p>
-  </div>
-  <div class="container">
-    <div class="row gy-4">
-      <!-- Repeat for 6 cards -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card food-card shadow-sm">
-          <img src="https://preview.colorlib.com/theme/foodfun/assets/images/food1.jpg" class="card-img-top" alt="Mexican Eggrolls">
-          <div class="card-body">
-            <h5 class="card-title">Mexican Eggrolls <span class="float-end prime-color">$14.50</span></h5>
-            <p class="card-text text-muted">Face together given moveth ...</p>
-          </div>
+   <header>
+        <div id="nav">
+            <div class="logo"><a href="#"><img src="./images/logo.png.webp" alt="Food Fun Logo"></a></div>
+            <div class="options">
+                <ul>
+                    <li><a href="#">HOME</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a href="#">ABOUT</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a href="#">MENU</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a href="#">BLOG</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a href="#">CONTACT</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a href="#">ELEMENTS</a></li>
+                </ul>
+            </div>            
         </div>
+   <div id="text">
+    <h6>THE MOST INTERESTING FOOD IN THE WORLD</h6>
+    <h1><em>Discover the <span class="prime-color">flavours</span></em></h1>
+       <h1>of&nbsp;<span class="prime-color">food</span>fun</h1>
+   </div>
+      </header> 
+
+      <section id="section-1">
+        <div><img src="https://preview.colorlib.com/theme/foodfun/assets/images/welcome-bg.png.webp" alt="" id="img1"></div>
+        <div><h2 class="prime-color"><em>welcome</em></h2>
+             <h2>to food fun</h2>
+             <p id="p1">Created god gathered don't you yielding herb you had. And isn't, god was <br>saw. Dominion. Great sixth for in unto was. Open can't tree am waters <br>brought. Divide after there. Was.</p>
+             <br>
+             <p id="p2">Created god gathered don't you yielding herb you had. And isn't, god was <br>saw. Dominion. Great sixth for in unto was. Open can't tree <br>waters brought. Divide after there. Was. Created god gathered don't you yielding <br>herb you had. And isn't god.</p>
+             <br>
+             <button>BOOK A TABLE</button>
+             </div>
+      </section>
+<section id="section-2">
+    <div id="text">
+  <h2 class="prime-color"><em>we serve</em></h2>
+  <h2>delicious food</h2>
+  <br>
+  <p id="p3">They're fill divide i their yielding our after have him fish on there for <br>greater man moveth, moved Won't together isn't for fly divide mids fish <br>firmament on net.</p>
+  </div>
+  <br><br><br><br>
+    <!-- Container-2 -->
+  <div class="food-cards-container">
+    <!-- Card-1 -->
+    <div class="food-card" id="card1">
+      <div class="food-images">
+        <img src="https://preview.colorlib.com/theme/foodfun/assets/images/food1.jpg" alt="Mexican Eggrolls">
       </div>
-      <!-- add other five similarly -->
+      <div class="food-text">
+        <h5 class="food-items-h5">Mexican Eggrolls</h5>
+        <span class="prime-color">$14.50</span>
+      </div>
+      <p class="food-text-p">Face together given moveth divided form Of Seasons that fruitful.</p>
+    </div>
+    <!-- Card-2 -->
+    <div class="food-card">
+      <div class="food-images">
+        <img src="https://preview.colorlib.com/theme/foodfun/assets/images/food2.jpg" alt="Chicken Burger">
+      </div>
+      <div class="food-text">
+        <h5 class="food-items-h5">Chicken Burger</h5>
+        <span class="prime-color">$9.50</span>
+      </div>
+      <p class="food-text-p">Face together given moveth divided form Of Seasons that fruitful.</p>
+    </div>
+    <!-- Card-3 -->
+    <div class="food-card">
+      <div class="food-images">
+        <img src="https://preview.colorlib.com/theme/foodfun/assets/images/food3.jpg" alt="Topu Lasange">
+      </div>
+      <div class="food-text">
+        <h5 class="food-items-h5">Topu Lasange</h5>
+        <span class="prime-color">$12.50</span>
+      </div>
+      <p class="food-text-p">Face together given moveth divided form Of Seasons that fruitful.</p>
+    </div>
+  </div>
+  <!-- Container-2 -->
+  <div class="food-cards-container">
+    <!-- Card-4 -->
+    <div class="food-card" id="card1">
+      <div class="food-images">
+        <img src="https://preview.colorlib.com/theme/foodfun/assets/images/food4.jpg.webp" alt="Pepper Potatoes">
+      </div>
+      <div class="food-text">
+        <h5 class="food-items-h5">Pepper Potatoes</h5>
+        <span class="prime-color">$14.50</span>
+      </div>
+      <p class="food-text-p">Face together given moveth divided form Of Seasons that fruitful.</p>
+    </div>
+    <!-- Card-5 -->
+    <div class="food-card">
+      <div class="food-images">
+        <img src="https://preview.colorlib.com/theme/foodfun/assets/images/food5.jpg" alt="Bean Salad">
+      </div>
+      <div class="food-text">
+        <h5 class="food-items-h5">Bean Salad</h5>
+        <span class="prime-color">$8.50</span>
+      </div>
+      <p class="food-text-p">Face together given moveth divided form Of Seasons that fruitful.</p>
+    </div>
+    <!-- Card-6 -->
+    <div class="food-card">
+      <div class="food-images">
+        <img src="https://preview.colorlib.com/theme/foodfun/assets/images/food6.jpg" alt="Beatball Hoagie">
+      </div>
+      <div class="food-text">
+        <h5 class="food-items-h5">Beatball Hoagie</h5>
+        <span class="prime-color">$11.50</span>
+      </div>
+      <p class="food-text-p">Face together given moveth divided form Of Seasons that fruitful.</p>
     </div>
   </div>
 </section>
-
-<section class="background-image">
-  <h2>Natural ingredients and tasty food</h2>
-  <h4><em>Some Trendy And Popular Courses Offered</em></h4>
-  <button class="btn btn-warning mt-3">RESERVATION</button>
-</section>
-
-<section class="py-5">
-  <div class="container text-center">
-    <h2>Our <span class="prime-color">special</span> dishes</h2>
-    <p><em>Beast kind form divide night above ...</em></p>
-    <!-- Special dish rows -->
-    <div class="row gy-4 mt-4">
-      <div class="col-md-6">
-        <div class="border p-4 text-start">
-          <h1 class="display-4">O1.</h1>
-          <h2 class="prime-color">Garlic</h2><h2>green beans</h2>
-          <p class="text-secondary">Be. Seed saying our signs ... rule can.</p>
-          <h3 class="prime-color">$12.00</h3>
-          <a href="#" class="text-decoration-none">BOOK A TABLE →</a>
+    <section id="section-3">
+        <div class="background-image">
+           <h2>Natural ingredients and tasty food</h2> 
+           <br>
+           <h4><em>Some Trendy And Popular Courses Offered</em></h4>
+           <br><br>
+           <button>RESERVATION</button>
         </div>
-      </div>
-      <div class="col-md-6">
-        <!-- similar content mirrored -->
-        <div class="border p-4 text-end">
-          <h1 class="display-4">O2.</h1>
-          <h2 class="prime-color">Garlic</h2><h2>green beans</h2>
-          <p class="text-secondary">Be. Seed saying our signs ...</p>
-          <h3 class="prime-color">$12.00</h3>
-          <a href="#" class="text-decoration-none">BOOK A TABLE →</a>
-        </div>
-      </div>
+    </section>
+    <section id="section-4">
+        <h2>Our&nbsp;<span class="prime-color">special</span>&nbsp;dishes</h2>
+        <p><em>Beast kind form divide night above let moveth bearing darkness.</em></p>
+    </section>
+    <div id="row1">
+      <h1 id="heading">O1.</h1>
+      <h2 class="prime-color">Garlic</h2>
+      <h2>green beans</h2>
+      <br>
+      <p>Be. Seed saying our signs beginning face give spirit own <br>beast darkness morning moveth green multiply she'd <br>kind saying one shall, two which darkness have day <br>image god their night. his subdue so you rule can.</p>
+      <br>
+      <h3 class="prime-color">$12.00</h3>
+      <br>
+      <a href="#">BOOK A TABLE </a>
     </div>
-  </div>
-</section>
-
-<section class="py-5 bg-light text-center">
-  <div class="container">
-    <h2>Book <span class="prime-color">your</span> table</h2>
-    <p><em>Beast kind form divide night above ...</em></p>
-    <form class="row justify-content-center g-2">
-      <div class="col-auto"><input type="date" class="form-control" placeholder="Date"></div>
-      <div class="col-auto"><input type="time" class="form-control" placeholder="Time"></div>
-      <div class="col-auto"><input type="text" class="form-control" placeholder="Name"></div>
-      <div class="col-auto"><button class="btn btn-warning">BOOK A TABLE</button></div>
-    </form>
-  </div>
-</section>
-
-<footer class="bg-dark text-white py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <img src="./images/logo.png.webp" alt="logo" height="50">
-        <p class="mt-2 text-muted">Which morning fourth great ... image spirit our.</p>
-      </div>
-      <div class="col-md-4">
-        <h5 class="prime-color">Contact Us</h5>
-        <p>1234 Some St San Francisco, CA<br>1.800.123.4567<br>support@axiomthhemes.com</p>
-      </div>
-      <div class="col-md-4">
-        <h5 class="prime-color">Opening Hours</h5>
-        <p>Mon: Closed<br>Tue–Fri: 10 am – 12 pm<br>Sat–Sun: 8 am – 11 pm<br>Holidays: 10 am – 12 pm</p>
-      </div>
+    <div id="row2">
+      <h1 id="heading1">O1.</h1>
+      <h2 class="prime-color">Garlic</h2>
+      <h2>green beans</h2>
+      <br>
+      <p>Be. Seed saying our signs beginning face give spirit own <br>beast darkness morning moveth green multiply she'd <br>kind saying one shall, two which darkness have day <br>image god their night. his subdue so you rule can.</p>
+      <br>
+      <h3 class="prime-color">$12.00</h3>
+      <br>
+      <a href="#">BOOK A TABLE </a>
     </div>
-    <p class="text-center mt-3">Copyright ©2025 All rights reserved | Made with ♥ by Colorlib</p>
-  </div>
-</footer>
+    <br><br><br>
+    <div id="section-6">
+      <h2>Book&nbsp;<span class="prime-color">your</span>&nbsp;table</h2>
+      <p><em>Beast kind form divide night above let moveth bearing darkness.</em></p>
+      <br><br>
+      <input type="text" id="calender" placeholder="Date">&nbsp;&nbsp;&nbsp;<input type="text" id="time" placeholder="Time">&nbsp;&nbsp;&nbsp;<input type="text" id="user" placeholder="Name">
+      <br><br><br>
+      <button>BOOK A TABLE</button>
+    </div>
+    <div id="section-7">
+      <table>
+        <tr>
+          <td><img src="./images/logo.png.webp" alt="">
+              <p>Which morning fourth great won't is to fly bearing <br>man. Called unto shall seed, deep, herb set seed <br>land divide after over first creeping. First creature <br>set upon stars deep male gathered said she'd an <br>image spirit our.</p>
+          </td>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+          <td><h2 class="prime-color">Contact Us</h2>
+            <br>
+            <p>1234 Some St San Francisco, CA 94102, US 1.800.123.4567</p>
+            <p>(123) 456 78 90</p>
+            <p>support@axiomthhemes.com</p>
+          </td>
+
+          <td>
+            <h2 class="prime-color">Opening Hours</h2>
+            <br>
+            <p>Monday...............Closed</p>
+            <p>Tue-Fri...............10 am - 12 pm</p>
+            <p>Sat-Sun...............8 am - 11 pm</p>
+            <p>Holidays...............10 am - 12 pm</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <footer>
+      <p>Copyright ©2025 All rights reserved | This template is made with &hearts; by Colorlib</p>
+    </footer>
+    </body>
 </html>
